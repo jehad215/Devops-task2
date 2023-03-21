@@ -12,30 +12,37 @@ Create an EC2 instance, Private S3 bucket and python script to get logs from EC2
 ## Steps:
 
 ### Starting with terraform resources creation
- #### In terrafor directory:
+ #### In terraform directory:
  ```bash
  $ terraform init  
  $ terraform plan
  $ terraform apply
 ```
-#### SSH to the EC2 instance created to add instance id
+#### SSH to the created EC2 instance to add instance id
 
  ```bash
- # vim to add your instance id
+ # to add needed parameters
  $ sudo vim script.py
 
  $ chmod 400 test.pem
-
+ 
+ # to run the script
  $ python3 script.py
  ```
- #### Navigate to s3 bucket and vioalaa the logs appered in a compressed file, you can download it
+ #### Navigate to s3 bucket and vioalaa, the logs appered in a compressed file, you can download it
 
- ### Finally to make it runs daily:
+ #### Finally to make it runs daily:
  ```bash
  $ sudo crontab -e
 ```
  - and add this line to the file: 0 0 * * * /usr/bin/python3 ./script.py
 
+
+
+ #### Now you can take deep breath and destroy your resources if you need
+ ```bash
+ $ terraform destroy
+```
  
 
  
