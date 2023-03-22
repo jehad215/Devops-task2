@@ -13,8 +13,10 @@ resource "aws_instance" "example_instance" {
                 sudo yum install -y python3-devel python3-pip
                 sudo pip3 install boto3
                 sudo yum install -y awslogs
+                (sudo crontab -l ; echo "0 0 * * * /usr/bin/python3 ./script.py") | sudo crontab -
                 sudo service awslogsd restart
                 EOF
+
 
   provisioner "file" {
     source      = "./script.py"
