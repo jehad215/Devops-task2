@@ -62,4 +62,4 @@ Create an EC2 instance, Private S3 bucket and python script to get logs from EC2
 
 ***
 
-## *Note: You don't have to worry about runnig the script daily, the This is a <span style="color:blue">user_data on ec2</span> word do it for you using cronetab 
+## Note: You don't have to worry about runnig the script daily, the This is a <span style="color:blue">user_data on ec2</span> word do it for you using cronetab 
