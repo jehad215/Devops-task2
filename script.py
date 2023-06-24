@@ -14,7 +14,7 @@ session = boto3.Session(
 ec2 = session.client('ec2')
 response = ec2.describe_instances(InstanceIds=['YOUR_INSTANCE_ID'])
 ip_address = response['Reservations'][0]['Instances'][0]['PublicIpAddress']
-key_path = './test.pem'
+key_path = './<Your Key Path File Name>'
 
 # Connect to the EC2 instance using SSH
 ssh_command = f'ssh -i {key_path} ec2-user@{ip_address} sudo cat /var/log/messages'
